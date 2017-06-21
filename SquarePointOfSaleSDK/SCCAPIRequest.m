@@ -42,6 +42,7 @@ NSString *__nonnull const SCCAPIRequestOptionsKey = @"options";
 NSString *__nonnull const SCCAPIRequestOptionsSupportedTenderTypesKey = @"supported_tender_types";
 NSString *__nonnull const SCCAPIRequestOptionsClearDefaultFeesKey = @"clear_default_fees";
 NSString *__nonnull const SCCAPIRequestOptionsAutoReturnKey = @"auto_return";
+NSString *__nonnull const SCCAPIRequestOptionsSkipReceipt = @"skip_receipt";
 NSString *__nonnull const SCCAPIRequestOptionsTenderTypeStringCard = @"CREDIT_CARD";
 NSString *__nonnull const SCCAPIRequestOptionsTenderTypeStringCash = @"CASH";
 NSString *__nonnull const SCCAPIRequestOptionsTenderTypeStringOther = @"OTHER";
@@ -272,7 +273,8 @@ static NSString *__nullable APIClientID = nil;
     NSArray *const supportedTenderTypes = NSArrayOfTenderTypeStringsFromSCCAPIRequestTenderTypes(self.supportedTenderTypes);
     [options SCC_setSafeObject:supportedTenderTypes forKey:SCCAPIRequestOptionsSupportedTenderTypesKey];
     [options SCC_setSafeObject:@(self.clearsDefaultFees) forKey:SCCAPIRequestOptionsClearDefaultFeesKey];
-    [options SCC_setSafeObject:@(self.returnsAutomaticallyAfterPayment) forKey:SCCAPIRequestOptionsAutoReturnKey];
+    [options SCC_setSafeObject:@(self.returnsAutomaticallyAfterPayment) forKey: SCCAPIRequestOptionsAutoReturnKey];
+    [options SCC_setSafeObject:@(YES) forKey:SCCAPIRequestOptionsSkipReceipt];
     if (options.count) {
         [data SCC_setSafeObject:options forKey:SCCAPIRequestOptionsKey];
     }
