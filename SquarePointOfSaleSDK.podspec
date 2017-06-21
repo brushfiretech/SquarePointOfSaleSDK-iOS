@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name         = 'SquarePointOfSaleSDKBrushfire'
+  s.name         = 'SquarePointOfSaleSDK'
   s.version      = '3.1'
   s.summary      = 'SDK for easier use of Square\'s Point of Sale app-switching API on iOS'
   s.homepage     = 'https://github.com/brushfiretech/SquarePointOfSaleSDK-iOS'
